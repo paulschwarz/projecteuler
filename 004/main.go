@@ -9,7 +9,15 @@ import (
 )
 
 func main() {
-	fmt.Println(largestPalindrome(3))
+	numDigits := "3"
+	fmt.Scanln(&numDigits)
+	fmt.Println(numDigits)
+	digits, err := strconv.Atoi(numDigits)
+	if err != nil {
+		fmt.Println(fmt.Errorf("Got error %q", err))
+	} else {
+		fmt.Println(largestPalindrome(digits))
+	}
 }
 
 func largestPalindrome(digits int) (palindrome int, a int, b int) {
