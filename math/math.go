@@ -19,3 +19,17 @@ func Multiples(limit int) (multiples []int) {
 	}
 	return
 }
+
+// GCD finds the greatest common divisor of two integers.
+func GCD(a, b int) int {
+	c := a % b
+	if c == 0 {
+		return b
+	}
+	return GCD(b, c)
+}
+
+// LCM finds the lowest common multiple of two integers.
+func LCM(a, b int) int {
+	return a * b / GCD(a, b)
+}

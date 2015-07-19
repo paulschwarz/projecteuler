@@ -64,3 +64,57 @@ func intArraysMatch(as []int, bs []int) bool {
 
 	return true
 }
+
+func TestGCD(t *testing.T) {
+
+	type pair struct {
+		a      int
+		b      int
+		result int
+	}
+
+	var pairs = []pair{
+		{1, 1, 1},
+		{10, 10, 10},
+		{10, 5, 5},
+		{9, 6, 3},
+	}
+
+	for _, pair := range pairs {
+		actual := GCD(pair.a, pair.b)
+		if actual != pair.result {
+			t.Error(
+				"For", pair.a, pair.b,
+				"expected", pair.result,
+				"got", actual,
+			)
+		}
+	}
+}
+
+func TestLCM(t *testing.T) {
+
+	type pair struct {
+		a      int
+		b      int
+		result int
+	}
+
+	var pairs = []pair{
+		{1, 1, 1},
+		{10, 10, 10},
+		{10, 5, 10},
+		{9, 6, 18},
+	}
+
+	for _, pair := range pairs {
+		actual := LCM(pair.a, pair.b)
+		if actual != pair.result {
+			t.Error(
+				"For", pair.a, pair.b,
+				"expected", pair.result,
+				"got", actual,
+			)
+		}
+	}
+}
